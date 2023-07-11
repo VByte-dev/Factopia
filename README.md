@@ -1,2 +1,3 @@
 # Factopia
-📌Factopia
+📌What Is Factopia?
+Factopia, a comprehensive online resource where you can uncover a world of fascinating facts and explore a wide range of informative articles. As you step into Factopia, prepare to embark on a journey of discovery and immerse yourself in a wealth of knowledge. Our site harnesses the power of the Wikipedia API, connecting you to a vast collection of articles and information covering diverse topics. Whether you're seeking answers to burning questions, conducting research, or simply indulging your curiosity, Factopia is your go-to destination. With our user-friendly interface and carefully curated content, we strive to make learning engaging, enjoyable, and accessible to all. Join us at Factopia and unlock a world of enlightenment.
