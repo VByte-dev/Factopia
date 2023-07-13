@@ -42,11 +42,12 @@
       padding: 10px;
       font-size: 16px;
       border-radius: 4px;
-      border: 1px solid rgb(165, 6, 6);
+      border: 2px solid rgb(0, 0, 0); /* Added red border */
       background-color: rgb(0, 0, 0);
-      color: rgb(165, 6, 6);
+      color: rgb(165, 10, 10);
       width: 100%;
-      margin-right: 10px; /* Add margin to separate the input and button */
+      margin-right: 10px;
+      outline: none; /* Remove the white border */
     }
 
     .search-container button[type="submit"] {
@@ -62,7 +63,7 @@
     .content {
       color: white;
       padding: 25px;
-      text-align: left;
+      text-align: center;
     }
 
     .related-topics {
@@ -77,6 +78,24 @@
 
     .point{
       text-align: center;
+    }
+
+    .fact-box {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 2px solid rgb(165, 6, 6);
+    }
+
+    .related-facts-box {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 2px solid rgb(165, 6, 6);
     }
 
   </style>
@@ -106,27 +125,39 @@
 <!-- Search bar -->
 <div class="search-container">
   <form action="#" method="get">
-    <input type="text" name="query" placeholder="Enter Your Search Query">
+    <input type="text" name="query" placeholder="Enter Your Search Query" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Search Query'">
     <button type="submit">Search</button>
   </form>
 </div>
 
-<div class="content">
-  <b style="color : rgb(165, 6, 6);">✗ Facts</b>
-  <p>{{content}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="fact-box">
+        <h3 style="color: rgb(165, 6, 6);">✗ Facts</h3>
+        <p>{{content}}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <div class="related-facts-box related-topics">
+        <h3 style="color: rgb(165, 6, 6);">✗ Related Facts</h3>
+        <p>
+          {% for article in related %}
+            {{ article }},
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="related-topics" style="color: #ffffff;">
-  <b style="color: rgb(165, 6, 6);">✗ Related Facts</b>
-  <p>{% for article in related %}
-    {{ article }},
-  {% endfor %}
-</p></div>
 
 <div class="point" style=" color: rgb(165, 6, 6)"><p>&#x2702; - - - - - - - - - - - - - - - - - - - - - - </p></div>
 
-<div class="content" style="text-align: center;">
-  <b style="color : rgb(165, 6, 6) ;">✗ What Is Factopia? </b>
+<div class="content">
+  <h3 style="color: rgb(165, 6, 6); ">✗ What Is Factopia?</h3>
   <p>{{we}}</p>
 </div>
 
